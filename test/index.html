@@ -14,6 +14,37 @@
 	</head>
 	<body class="is-preload">
 
+		<script>
+		// Set the date we're counting down to
+		var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
+
+		// Update the count down every 1 second
+		var x = setInterval(function() {
+
+		    // Get todays date and time
+		    var now = new Date().getTime();
+
+		    // Find the distance between now an the count down date
+		    var distance = countDownDate - now;
+
+		    // Time calculations for days, hours, minutes and seconds
+		    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		    // Output the result in an element with id="demo"
+		    document.getElementById("days").innerHTML = days;
+		    document.getElementById("seconds").innerHTML = distance;
+
+		    // If the count down is over, write some text
+		    if (distance < 0) {
+		        clearInterval(x);
+		        document.getElementById("demo").innerHTML = "EXPIRED";
+		    }
+		}, 1000);
+		</script>
+
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
@@ -24,9 +55,9 @@
 							<section class="panel banner right">
 								<div class="content color0 span-3-75">
 									<h1 class="major">Aastavahetus<br />
-									2018/2019!</h1>
+									2018 / 2019!</h1>
 									<p><strong>Aastavahetuseni</strong> on jäänud:<br />
-									123 päeva, see on 381738 sekundit!</p>
+									<p id="days"></p> päeva, see on <p id="seconds"></p> sekundit!</p>
 									<ul class="actions">
 										<li><a href="#first" class="button primary color1 circle icon fa-angle-right">Next</a></li>
 									</ul>
