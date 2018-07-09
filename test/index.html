@@ -34,7 +34,7 @@
 		    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 		    // Output the result in an element with id="demo"
-		    document.getElementById("days").innerHTML = "strong>Aastavahetuseni</strong> on jäänud: " + days + ", see on " + distance  + " sekundit!";
+		    document.getElementById("days").innerHTML = "<strong>Aastavahetuseni</strong> on jäänud: " + days + ", see on " + distance  + " sekundit!";
 
 		    // If the count down is over, write some text
 		    if (distance < 0) {
@@ -55,8 +55,7 @@
 								<div class="content color0 span-3-75">
 									<h1 class="major">Aastavahetus<br />
 									2018 / 2019!</h1>
-									<p><strong>Aastavahetuseni</strong> on jäänud:<br />
-									<p id="days"></p> päeva, see on <p id="seconds"></p> sekundit!</p>
+									<p><p id="days"></p></p>
 									<ul class="actions">
 										<li><a href="#first" class="button primary color1 circle icon fa-angle-right">Next</a></li>
 									</ul>
